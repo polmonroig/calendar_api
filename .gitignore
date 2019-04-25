@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# cache
+__pycache__/
+
+# api token 
+token.pickle
+
+# credentials
+credentials.json
