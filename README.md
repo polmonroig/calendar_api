@@ -1,5 +1,5 @@
 # calendar_api
-Google Calendar Event Search
+This is an app that is connected to Google Calendar, the main purpose of this application is to collect the events of a calendar to search them by date, name and color. 
 
 ### Installation ###
 
