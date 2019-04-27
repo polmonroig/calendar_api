@@ -4,6 +4,10 @@ This is an app that is connected to Google Calendar, the main purpose of this ap
 ### Installation ###
 
     pip install cal_event_search
+    
+Note: after installing you will need a Google API credentials, 
+      they are included inside the cal_event_search folder 
+      or you can use your own 
 
 ## Prerequisites
     python >= 3.7
