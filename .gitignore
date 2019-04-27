@@ -111,3 +111,6 @@ token.pickle
 
 # credentials
 credentials.json
+
+# pycharm
+.idea/
