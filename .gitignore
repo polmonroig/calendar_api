@@ -108,9 +108,10 @@ __pycache__/
 
 # api token 
 token.pickle
-
-# credentials
-credentials.json
+cal_event_search/token.pickle
 
 # pycharm
 .idea/
+
+#
+cal_event_search.egg-info/

@@ -1,5 +1,5 @@
-from PyQt5 import QtGui, QtCore, QtWidgets
-from api_utils import connect, get_list
+from PyQt5 import QtCore, QtWidgets
+from cal_event_search.api_utils import connect, get_list
 import datetime
 
 

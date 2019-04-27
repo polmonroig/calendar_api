@@ -168,14 +168,6 @@ class Ui_Form(object):
         self.label_3.setText(_translate("Form", "Total found"))
         self.label_4.setText(_translate("Form", "0"))
 
-from events_list import EventsList
+from cal_event_search.events_list import EventsList
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
 
