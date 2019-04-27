@@ -53,17 +53,18 @@ class EventsList(QtWidgets.QListWidget):
         count = 0
         print(len(elements))
         for e in elements:
-            if self.color is None:
-                if self.search_entry is None or self.similar(e['summary'].lower()):
-                    self.addItem(e['summary'])
-                    count += 1
-            elif 'colorId' in e and int(e['colorId']) == self.color:
-                if self.search_entry is None or self.similar(e['summary'].lower()):
-                    self.addItem(e['summary'])
-                    count += 1
-                print(e['summary'], e['colorId'])
-            if self.max_entries and count >= self.max_entries:
-                break
+            if 'summary' in e:
+                if self.color is None:
+                    if self.search_entry is None or self.similar(e['summary'].lower()):
+                        self.addItem(e['summary'])
+                        count += 1
+                elif 'colorId' in e and int(e['colorId']) == self.color:
+                    if self.search_entry is None or self.similar(e['summary'].lower()):
+                        self.addItem(e['summary'])
+                        count += 1
+                    print(e['summary'], e['colorId'])
+                if self.max_entries and count >= self.max_entries:
+                    break
         self.send_entries.emit(count)
 
     def connect_api(self):

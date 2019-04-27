@@ -110,8 +110,6 @@ __pycache__/
 token.pickle
 cal_event_search/token.pickle
 
-# credentials
-cal_event_search/credentials.json
 
 # pycharm
 .idea/

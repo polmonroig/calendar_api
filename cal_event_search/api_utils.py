@@ -44,6 +44,7 @@ def get_list(service, start_time, end_time):
     events_result = service.events().list(calendarId=id,
                                           timeMin=start_time,
                                           timeMax=end_time,
+                                          maxResults=10000,
                                           singleEvents=True,
                                           orderBy='startTime').execute()
     events = events_result.get('items', [])
