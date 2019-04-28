@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>701</width>
-    <height>334</height>
+    <width>1253</width>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,10 +19,65 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="EventsList" name="listWidget"/>
+        <layout class="QHBoxLayout" name="horizontalLayout"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="EventsTable" name="tableWidget">
+         <property name="minimumSize">
+          <size>
+           <width>800</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>800</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAsNeeded</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>200</number>
+         </attribute>
+         <attribute name="horizontalHeaderMinimumSectionSize">
+          <number>200</number>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Summary</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Duration</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Start Date</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Color</string>
+          </property>
+         </column>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
          <item>
           <widget class="QPushButton" name="pushButton">
            <property name="text">
@@ -57,6 +112,19 @@
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <layout class="QHBoxLayout" name="horizontalLayout_8">
          <item>
           <widget class="QLabel" name="label_7">
@@ -64,6 +132,19 @@
             <string>Search</string>
            </property>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_7">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QLineEdit" name="lineEdit_2">
@@ -275,6 +356,12 @@
              <day>20</day>
             </date>
            </property>
+           <property name="displayFormat">
+            <string>d/M/yyyy h:mm AP</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
+           </property>
           </widget>
          </item>
         </layout>
@@ -317,10 +404,26 @@
            </property>
            <property name="date">
             <date>
-             <year>2099</year>
+             <year>2025</year>
              <month>12</month>
              <day>31</day>
             </date>
+           </property>
+           <property name="maximumDateTime">
+            <datetime>
+             <hour>13</hour>
+             <minute>59</minute>
+             <second>59</second>
+             <year>9925</year>
+             <month>12</month>
+             <day>31</day>
+            </datetime>
+           </property>
+           <property name="displayFormat">
+            <string>d/M/yyyy h:mm AP</string>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -369,6 +472,62 @@
          </item>
         </layout>
        </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>Duration</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_9">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="minimumSize">
+            <size>
+             <width>220</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>220</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </item>
     </layout>
@@ -377,18 +536,19 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>EventsList</class>
-   <extends>QListWidget</extends>
-   <header>events_list</header>
+   <class>EventsTable</class>
+   <extends>QTableWidget</extends>
+   <header>events_table</header>
    <slots>
     <signal>send_entries(int)</signal>
-    <slot>add_list_elements()</slot>
+    <signal>send_duration(QString)</signal>
     <slot>connect_api()</slot>
+    <slot>add_list_elements()</slot>
+    <slot>set_search_entry(QString)</slot>
     <slot>filter_color(int)</slot>
     <slot>set_max_entries(QString)</slot>
     <slot>set_start_time(QDateTime)</slot>
     <slot>set_end_time(QDateTime)</slot>
-    <slot>set_search_entry(QString)</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -397,144 +557,160 @@
   <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>listWidget</receiver>
-   <slot>connect_api()</slot>
+   <receiver>pushButton</receiver>
+   <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>124</x>
-     <y>324</y>
+     <x>116</x>
+     <y>335</y>
     </hint>
     <hint type="destinationlabel">
-     <x>246</x>
-     <y>199</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>listWidget</receiver>
-   <slot>add_list_elements()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>253</x>
-     <y>324</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>246</x>
-     <y>174</y>
+     <x>78</x>
+     <y>335</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
-   <receiver>pushButton</receiver>
-   <slot>hide()</slot>
+   <receiver>tableWidget</receiver>
+   <slot>connect_api()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>97</x>
-     <y>324</y>
+     <x>247</x>
+     <y>321</y>
     </hint>
     <hint type="destinationlabel">
-     <x>59</x>
-     <y>324</y>
+     <x>266</x>
+     <y>293</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>comboBox</sender>
-   <signal>activated(int)</signal>
-   <receiver>listWidget</receiver>
-   <slot>filter_color(int)</slot>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>add_list_elements()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>671</x>
-     <y>100</y>
+     <x>521</x>
+     <y>328</y>
     </hint>
     <hint type="destinationlabel">
-     <x>246</x>
-     <y>142</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>listWidget</sender>
-   <signal>send_entries(int)</signal>
-   <receiver>label_4</receiver>
-   <slot>setNum(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>239</x>
-     <y>166</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>671</x>
-     <y>316</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>listWidget</receiver>
-   <slot>set_max_entries(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>671</x>
-     <y>154</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>226</x>
-     <y>78</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>dateTimeEdit</sender>
-   <signal>dateTimeChanged(QDateTime)</signal>
-   <receiver>listWidget</receiver>
-   <slot>set_start_time(QDateTime)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>477</x>
-     <y>190</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>191</x>
-     <y>113</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>dateTimeEdit_2</sender>
-   <signal>dateTimeChanged(QDateTime)</signal>
-   <receiver>listWidget</receiver>
-   <slot>set_end_time(QDateTime)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>505</x>
-     <y>261</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>216</x>
-     <y>173</y>
+     <x>418</x>
+     <y>257</y>
     </hint>
    </hints>
   </connection>
   <connection>
    <sender>lineEdit_2</sender>
    <signal>textChanged(QString)</signal>
-   <receiver>listWidget</receiver>
+   <receiver>tableWidget</receiver>
    <slot>set_search_entry(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>541</x>
-     <y>33</y>
+     <x>1056</x>
+     <y>45</y>
     </hint>
     <hint type="destinationlabel">
-     <x>244</x>
-     <y>30</y>
+     <x>532</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comboBox</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>tableWidget</receiver>
+   <slot>filter_color(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1043</x>
+     <y>106</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>534</x>
+     <y>197</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>tableWidget</receiver>
+   <slot>set_max_entries(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1025</x>
+     <y>134</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dateTimeEdit</sender>
+   <signal>dateTimeChanged(QDateTime)</signal>
+   <receiver>tableWidget</receiver>
+   <slot>set_start_time(QDateTime)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1040</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>574</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dateTimeEdit_2</sender>
+   <signal>dateTimeChanged(QDateTime)</signal>
+   <receiver>tableWidget</receiver>
+   <slot>set_end_time(QDateTime)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1031</x>
+     <y>216</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>554</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>send_entries(int)</signal>
+   <receiver>label_4</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>607</x>
+     <y>293</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1048</x>
+     <y>251</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>send_duration(QString)</signal>
+   <receiver>label_9</receiver>
+   <slot>setText(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>798</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1046</x>
+     <y>302</y>
     </hint>
    </hints>
   </connection>
