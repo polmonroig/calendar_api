@@ -20,6 +20,7 @@ Note: after installing you will need a Google API credentials,
     google-auth-httplib2>=0.0.3
     google-auth-oauthlib>=0.3.0
     google-pasta>=0.1.4
+    numpy>=1.15.4 
 
 ### Who do I talk to? ###
 
