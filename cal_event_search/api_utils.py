@@ -42,8 +42,8 @@ def get_list(service, start_time, end_time):
     # Call the Calendar API
     id = 'primary'
     events_result = service.events().list(calendarId=id,
-                                          timeMin=start_time,
-                                          timeMax=end_time,
+                                          timeMin=start_time.isoformat() + 'Z',
+                                          timeMax=end_time.isoformat() + 'Z',
                                           maxResults=10000,
                                           singleEvents=True,
                                           orderBy='startTime').execute()

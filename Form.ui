@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1253</width>
+    <width>1290</width>
     <height>515</height>
    </rect>
   </property>
@@ -132,395 +132,472 @@
         </spacer>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QLabel" name="label_7">
-           <property name="text">
-            <string>Search</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit_2">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>35</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="search_widget" native="true">
+         <layout class="QHBoxLayout" name="sear">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Search</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>35</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="text">
-            <string>Type</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QComboBox" name="comboBox">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maxVisibleItems">
-            <number>3</number>
-           </property>
-           <item>
+        <widget class="QWidget" name="type_widget_2" native="true">
+         <layout class="QHBoxLayout" name="type_widget">
+          <item>
+           <widget class="QLabel" name="label">
             <property name="text">
-             <string>All</string>
+             <string>Type</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Lavender</string>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Esmerald Green</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Intense purple</string>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox">
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Turquoise</string>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Egg Yellow</string>
+            <property name="maxVisibleItems">
+             <number>3</number>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Mandarin orange</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Pink Bubblegum</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Graphite</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Blueberry Blue</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Moss Green</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Tomato</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
+            <item>
+             <property name="text">
+              <string>All</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Lavender</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Esmerald Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Intense purple</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Turquoise</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Egg Yellow</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Mandarin orange</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pink Bubblegum</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Graphite</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Blueberry Blue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Moss Green</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Tomato</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string>Max Entries</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="inputMask">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string/>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="max_entries_widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Max Entries</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="text">
-            <string>Start Time</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QDateTimeEdit" name="dateTimeEdit">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="date">
-            <date>
-             <year>2019</year>
-             <month>4</month>
-             <day>20</day>
-            </date>
-           </property>
-           <property name="displayFormat">
-            <string>d/M/yyyy h:mm AP</string>
-           </property>
-           <property name="calendarPopup">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="basic_time_widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Time</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_4">
+            <property name="text">
+             <string>Last Week</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_5">
+            <property name="text">
+             <string>Last Month</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_6">
+            <property name="text">
+             <string>Last Year</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox">
+            <property name="text">
+             <string>Advanced</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="label_6">
-           <property name="text">
-            <string>End Time</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QDateTimeEdit" name="dateTimeEdit_2">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>35</height>
-            </size>
-           </property>
-           <property name="date">
-            <date>
-             <year>2025</year>
-             <month>12</month>
-             <day>31</day>
-            </date>
-           </property>
-           <property name="maximumDateTime">
-            <datetime>
-             <hour>13</hour>
-             <minute>59</minute>
-             <second>59</second>
-             <year>9925</year>
-             <month>12</month>
-             <day>31</day>
-            </datetime>
-           </property>
-           <property name="displayFormat">
-            <string>d/M/yyyy h:mm AP</string>
-           </property>
-           <property name="calendarPopup">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="start_time_widget" native="true">
+         <layout class="QHBoxLayout" name="start_time_layout">
+          <item>
+           <widget class="QLabel" name="start_time_label">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="text">
+             <string>Start Time</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="start_time_spacer">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="start_time">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="date">
+             <date>
+              <year>2019</year>
+              <month>4</month>
+              <day>20</day>
+             </date>
+            </property>
+            <property name="displayFormat">
+             <string>d/M/yyyy h:mm AP</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="text">
-            <string>Total found</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="end_time_widget" native="true">
+         <layout class="QHBoxLayout" name="end_time_layout">
+          <item>
+           <widget class="QLabel" name="end_time_label">
+            <property name="text">
+             <string>End Time</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="end_time_spacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QDateTimeEdit" name="end_time">
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="date">
+             <date>
+              <year>2025</year>
+              <month>12</month>
+              <day>31</day>
+             </date>
+            </property>
+            <property name="maximumDateTime">
+             <datetime>
+              <hour>13</hour>
+              <minute>59</minute>
+              <second>59</second>
+              <year>9925</year>
+              <month>12</month>
+              <day>31</day>
+             </datetime>
+            </property>
+            <property name="displayFormat">
+             <string>d/M/yyyy h:mm AP</string>
+            </property>
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <item>
-          <widget class="QLabel" name="label_8">
-           <property name="text">
-            <string>Duration</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_9">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_9">
-           <property name="minimumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>220</width>
-             <height>30</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QWidget" name="total_widget_2" native="true">
+         <layout class="QHBoxLayout" name="total_widget">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Total found</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QWidget" name="duration_widget" native="true">
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Duration</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="minimumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>220</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
         <spacer name="verticalSpacer_2">
@@ -557,6 +634,9 @@
     <slot>set_start_time(QDateTime)</slot>
     <slot>set_end_time(QDateTime)</slot>
     <slot>save_data()</slot>
+    <slot>set_last_week()</slot>
+    <slot>set_last_month()</slot>
+    <slot>set_last_year()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -569,11 +649,11 @@
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>135</x>
+     <x>154</x>
      <y>505</y>
     </hint>
     <hint type="destinationlabel">
-     <x>97</x>
+     <x>116</x>
      <y>505</y>
     </hint>
    </hints>
@@ -585,7 +665,7 @@
    <slot>connect_api()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>266</x>
+     <x>280</x>
      <y>505</y>
     </hint>
     <hint type="destinationlabel">
@@ -611,18 +691,34 @@
    </hints>
   </connection>
   <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>save_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>816</x>
+     <y>505</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>688</x>
+     <y>368</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>lineEdit_2</sender>
    <signal>textChanged(QString)</signal>
    <receiver>tableWidget</receiver>
    <slot>set_search_entry(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1243</x>
-     <y>155</y>
+     <x>1085</x>
+     <y>125</y>
     </hint>
     <hint type="destinationlabel">
-     <x>532</x>
-     <y>142</y>
+     <x>713</x>
+     <y>111</y>
     </hint>
    </hints>
   </connection>
@@ -633,12 +729,12 @@
    <slot>filter_color(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1243</x>
-     <y>193</y>
+     <x>1069</x>
+     <y>161</y>
     </hint>
     <hint type="destinationlabel">
-     <x>534</x>
-     <y>197</y>
+     <x>791</x>
+     <y>158</y>
     </hint>
    </hints>
   </connection>
@@ -649,44 +745,44 @@
    <slot>set_max_entries(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1243</x>
-     <y>231</y>
+     <x>1068</x>
+     <y>196</y>
     </hint>
     <hint type="destinationlabel">
-     <x>512</x>
-     <y>238</y>
+     <x>795</x>
+     <y>194</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>dateTimeEdit</sender>
+   <sender>start_time</sender>
    <signal>dateTimeChanged(QDateTime)</signal>
    <receiver>tableWidget</receiver>
    <slot>set_start_time(QDateTime)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1243</x>
-     <y>274</y>
+     <x>1069</x>
+     <y>282</y>
     </hint>
     <hint type="destinationlabel">
-     <x>574</x>
-     <y>278</y>
+     <x>752</x>
+     <y>283</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>dateTimeEdit_2</sender>
+   <sender>end_time</sender>
    <signal>dateTimeChanged(QDateTime)</signal>
    <receiver>tableWidget</receiver>
    <slot>set_end_time(QDateTime)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1243</x>
-     <y>317</y>
+     <x>1077</x>
+     <y>319</y>
     </hint>
     <hint type="destinationlabel">
-     <x>554</x>
-     <y>293</y>
+     <x>774</x>
+     <y>324</y>
     </hint>
    </hints>
   </connection>
@@ -697,12 +793,12 @@
    <slot>setNum(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>607</x>
-     <y>293</y>
+     <x>786</x>
+     <y>364</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1243</x>
-     <y>355</y>
+     <x>1109</x>
+     <y>363</y>
     </hint>
    </hints>
   </connection>
@@ -713,28 +809,92 @@
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>798</x>
-     <y>257</y>
+     <x>802</x>
+     <y>412</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1243</x>
-     <y>393</y>
+     <x>1082</x>
+     <y>405</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>tableWidget</receiver>
-   <slot>save_data()</slot>
+   <sender>checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>start_time_widget</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>671</x>
-     <y>483</y>
+     <x>1197</x>
+     <y>232</y>
     </hint>
     <hint type="destinationlabel">
-     <x>676</x>
-     <y>397</y>
+     <x>936</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>end_time_widget</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1192</x>
+     <y>243</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>973</x>
+     <y>317</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>set_last_week()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>927</x>
+     <y>240</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>746</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>set_last_month()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1012</x>
+     <y>237</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>765</x>
+     <y>260</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>set_last_year()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1106</x>
+     <y>236</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>774</x>
+     <y>217</y>
     </hint>
    </hints>
   </connection>

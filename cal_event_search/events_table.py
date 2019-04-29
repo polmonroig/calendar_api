@@ -15,8 +15,8 @@ class EventsTable(QtWidgets.QTableWidget):
         self.service = None
         self.color = None
         self.max_entries = None
-        self.start_time = datetime.datetime.utcnow().isoformat() + 'Z'
-        self.end_time = None
+        self.end_time = datetime.datetime.utcnow()
+        self.start_time = self.end_time - datetime.timedelta(days=7)
         self.search_entry = None
         self.count = 0
         self.color_reference = [(125, 125, 125), (116, 134, 197), (10, 176, 124),
@@ -44,6 +44,18 @@ class EventsTable(QtWidgets.QTableWidget):
 
     def set_start_time(self, time):
         self.start_time = time.toPyDateTime().isoformat() + 'Z'
+
+    def set_last_week(self):
+        self.end_time = datetime.datetime.utcnow()
+        self.start_time = self.end_time - datetime.timedelta(days=7)
+
+    def set_last_month(self):
+        self.end_time = datetime.datetime.utcnow()
+        self.start_time = self.end_time - datetime.timedelta(days=30)
+
+    def set_last_year(self):
+        self.end_time = datetime.datetime.utcnow()
+        self.start_time = self.end_time - datetime.timedelta(days=365)
 
     def similar(self, bag):
         words = bag.split()
@@ -73,12 +85,11 @@ class EventsTable(QtWidgets.QTableWidget):
                 color = self.color_reference[0]
 
                 start_time = e['start']['dateTime']
-                start_time = datetime.datetime.strptime(start_time, "%Y-%m-%dT%H:%M:%S+02:00")
+                start_time = datetime.datetime.strptime(start_time[:-6], "%Y-%m-%dT%H:%M:%S")
                 end_time = e['end']['dateTime']
-                end_time = datetime.datetime.strptime(end_time, "%Y-%m-%dT%H:%M:%S+02:00")
+                end_time = datetime.datetime.strptime(end_time[:-6], "%Y-%m-%dT%H:%M:%S")
                 duration = end_time - start_time
                 if 'colorId' in e:
-                    print("color: ", int(e['colorId']))
                     color = self.color_reference[int(e['colorId'])]
                 if self.color is None:
                     if self.search_entry is None or self.similar(summary.lower()):
@@ -114,7 +125,6 @@ class EventsTable(QtWidgets.QTableWidget):
         self.service = connect()
 
     def filter_color(self, color):
-        print("Current filter:", color)
         if color != 0:
             self.color = color
         else:
