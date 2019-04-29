@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtWidgets, QtGui
 from cal_event_search.api_utils import connect, get_list
 import datetime
+import numpy as np
 
 
 class EventsTable(QtWidgets.QTableWidget):
@@ -99,6 +100,15 @@ class EventsTable(QtWidgets.QTableWidget):
         # emit signals
         self.send_entries.emit(self.count)
         self.send_duration.emit(str(total_duration) + " seconds")
+
+    def save_data(self):
+        data = np.array([])
+        n_cols = 3
+        for i in range(self.count):
+            for j in range(n_cols):
+                data = np.append(data, self.item(i, j).text())
+        data = data.reshape(self.count, n_cols)
+        np.savetxt("data.csv", data, delimiter=",", fmt='%s')
 
     def connect_api(self):
         self.service = connect()

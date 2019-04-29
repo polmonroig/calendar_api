@@ -116,3 +116,6 @@ cal_event_search/token.pickle
 
 #
 cal_event_search.egg-info/
+
+# data save
+cal_event_search/data.csv

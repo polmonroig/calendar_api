@@ -51,6 +51,9 @@ class Ui_Form(object):
         self.pushButton_2 = QtWidgets.QPushButton(Form)
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayout_9.addWidget(self.pushButton_2)
+        self.pushButton_3 = QtWidgets.QPushButton(Form)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.horizontalLayout_9.addWidget(self.pushButton_3)
         self.verticalLayout_3.addLayout(self.horizontalLayout_9)
         self.horizontalLayout_5.addLayout(self.verticalLayout_3)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -186,6 +189,7 @@ class Ui_Form(object):
         self.dateTimeEdit_2.dateTimeChanged['QDateTime'].connect(self.tableWidget.set_end_time)
         self.tableWidget.send_entries['int'].connect(self.label_4.setNum)
         self.tableWidget.send_duration['QString'].connect(self.label_9.setText)
+        self.pushButton_3.clicked.connect(self.tableWidget.save_data)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -201,7 +205,8 @@ class Ui_Form(object):
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("Form", "Color"))
         self.pushButton.setText(_translate("Form", "Connect"))
-        self.pushButton_2.setText(_translate("Form", "Download"))
+        self.pushButton_2.setText(_translate("Form", "Search"))
+        self.pushButton_3.setText(_translate("Form", "Save"))
         self.label_7.setText(_translate("Form", "Search"))
         self.label.setText(_translate("Form", "Type"))
         self.comboBox.setItemText(0, _translate("Form", "All"))
@@ -226,4 +231,14 @@ class Ui_Form(object):
         self.label_8.setText(_translate("Form", "Duration"))
         self.label_9.setText(_translate("Form", "0"))
 
-from cal_event_search.events_table import EventsTable
+from events_table import EventsTable
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec_())
+
