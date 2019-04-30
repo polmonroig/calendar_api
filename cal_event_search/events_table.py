@@ -39,6 +39,7 @@ class EventsTable(QtWidgets.QTableWidget):
         while self.rowCount() > 0:
             self.removeRow(0)
         self.count = 0
+        self.setSortingEnabled(False)
 
     def empty_table(self):
         self.empty_list()
@@ -122,6 +123,7 @@ class EventsTable(QtWidgets.QTableWidget):
         # emit signals
         self.send_entries.emit(self.count)
         self.send_duration.emit(str(total_duration) + " seconds")
+        self.setSortingEnabled(True)
 
     def save_data(self):
         data = np.array([])

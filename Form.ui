@@ -108,6 +108,13 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_7">
+           <property name="text">
+            <string>Empty</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
@@ -905,6 +912,22 @@
     <hint type="destinationlabel">
      <x>774</x>
      <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget</receiver>
+   <slot>empty_table()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>769</x>
+     <y>490</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>605</x>
+     <y>408</y>
     </hint>
    </hints>
   </connection>

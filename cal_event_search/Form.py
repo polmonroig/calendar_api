@@ -57,6 +57,9 @@ class Ui_Form(object):
         self.pushButton_3 = QtWidgets.QPushButton(Form)
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_9.addWidget(self.pushButton_3)
+        self.pushButton_7 = QtWidgets.QPushButton(Form)
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.horizontalLayout_9.addWidget(self.pushButton_7)
         self.verticalLayout_3.addLayout(self.horizontalLayout_9)
         self.horizontalLayout_5.addLayout(self.verticalLayout_3)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
@@ -236,6 +239,7 @@ class Ui_Form(object):
         self.pushButton_4.clicked.connect(self.tableWidget.set_last_week)
         self.pushButton_5.clicked.connect(self.tableWidget.set_last_month)
         self.pushButton_6.clicked.connect(self.tableWidget.set_last_year)
+        self.pushButton_7.clicked.connect(self.tableWidget.empty_table)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -253,6 +257,7 @@ class Ui_Form(object):
         self.pushButton.setText(_translate("Form", "Connect"))
         self.pushButton_2.setText(_translate("Form", "Search"))
         self.pushButton_3.setText(_translate("Form", "Save"))
+        self.pushButton_7.setText(_translate("Form", "Empty"))
         self.label_7.setText(_translate("Form", "Search"))
         self.label.setText(_translate("Form", "Type"))
         self.comboBox.setItemText(0, _translate("Form", "All"))
@@ -283,4 +288,6 @@ class Ui_Form(object):
         self.label_9.setText(_translate("Form", "0"))
 
 from cal_event_search.events_table import EventsTable
+
+
 
