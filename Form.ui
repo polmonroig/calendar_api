@@ -646,6 +646,7 @@
     <slot>set_last_week()</slot>
     <slot>set_last_month()</slot>
     <slot>set_last_year()</slot>
+    <slot>empty_table()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -674,7 +675,7 @@
    <slot>connect_api()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>280</x>
+     <x>213</x>
      <y>505</y>
     </hint>
     <hint type="destinationlabel">
@@ -690,7 +691,7 @@
    <slot>add_list_elements()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>548</x>
+     <x>414</x>
      <y>505</y>
     </hint>
     <hint type="destinationlabel">
@@ -706,7 +707,7 @@
    <slot>save_data()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>816</x>
+     <x>615</x>
      <y>505</y>
     </hint>
     <hint type="destinationlabel">
@@ -722,8 +723,8 @@
    <slot>set_search_entry(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1085</x>
-     <y>125</y>
+     <x>1275</x>
+     <y>99</y>
     </hint>
     <hint type="destinationlabel">
      <x>713</x>
@@ -738,8 +739,8 @@
    <slot>filter_color(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1069</x>
-     <y>161</y>
+     <x>1275</x>
+     <y>147</y>
     </hint>
     <hint type="destinationlabel">
      <x>791</x>
@@ -754,8 +755,8 @@
    <slot>set_max_entries(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1068</x>
-     <y>196</y>
+     <x>1275</x>
+     <y>195</y>
     </hint>
     <hint type="destinationlabel">
      <x>795</x>
@@ -786,8 +787,8 @@
    <slot>set_end_time(QDateTime)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1077</x>
-     <y>319</y>
+     <x>1275</x>
+     <y>354</y>
     </hint>
     <hint type="destinationlabel">
      <x>774</x>
@@ -806,8 +807,8 @@
      <y>364</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1109</x>
-     <y>363</y>
+     <x>1275</x>
+     <y>402</y>
     </hint>
    </hints>
   </connection>
@@ -822,8 +823,8 @@
      <y>412</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1082</x>
-     <y>405</y>
+     <x>1275</x>
+     <y>450</y>
     </hint>
    </hints>
   </connection>

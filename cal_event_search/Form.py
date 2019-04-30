@@ -284,5 +284,3 @@ class Ui_Form(object):
 
 from cal_event_search.events_table import EventsTable
 
-
-

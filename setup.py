@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="cal_event_search",
-    version="1.0.7",
+    version="1.0.8",
     author="Pol Monroig",
     author_email="polmonroig@gmail.com",
     description="Calendar Event Search",

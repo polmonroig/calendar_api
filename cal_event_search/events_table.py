@@ -36,9 +36,12 @@ class EventsTable(QtWidgets.QTableWidget):
             self.max_entries = None
 
     def empty_list(self):
-        for i in range(self.count):
-            self.removeRow(i)
+        while self.rowCount() > 0:
+            self.removeRow(0)
         self.count = 0
+
+    def empty_table(self):
+        self.empty_list()
 
     def set_search_entry(self, s):
         self.search_entry = s.lower()
