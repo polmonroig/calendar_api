@@ -24,6 +24,11 @@ class EventsTable(QtWidgets.QTableWidget):
                                 (248, 73, 43), (236, 121, 126), (97, 97, 97),
                                 (51, 86, 185), (4, 130, 79), (221, 7, 27)]
 
+        self.color_names = ["unknown", "lavander", "esmerald green",
+                            "intense purple", "Turqouise", "egg yellow",
+                            "mandarin orange", "pink", "graphite",
+                            "blueberry blue", "moss green", "tomato"]
+
     def set_max_entries(self, entries):
         try:
             self.max_entries = int(entries)
@@ -40,10 +45,10 @@ class EventsTable(QtWidgets.QTableWidget):
             self.search_entry = None
 
     def set_end_time(self, time):
-        self.end_time = time.toPyDateTime().isoformat() + 'Z'
+        self.end_time = time.toPyDateTime()
 
     def set_start_time(self, time):
-        self.start_time = time.toPyDateTime().isoformat() + 'Z'
+        self.start_time = time.toPyDateTime()
 
     def set_last_week(self):
         self.end_time = datetime.datetime.utcnow()
@@ -64,13 +69,14 @@ class EventsTable(QtWidgets.QTableWidget):
                 return True
         return False
 
-    def add_row(self, summary, duration, start_date, color):
+    def add_row(self, summary, duration, start_date, color, color_name):
         self.insertRow(self.count)
         self.setItem(self.count, 0, QtWidgets.QTableWidgetItem(summary))
         self.setItem(self.count, 1, QtWidgets.QTableWidgetItem(duration))
         self.setItem(self.count, 2, QtWidgets.QTableWidgetItem(start_date))
-        self.setItem(self.count, 3, QtWidgets.QTableWidgetItem(""))
+        self.setItem(self.count, 3, QtWidgets.QTableWidgetItem(color_name))
         self.item(self.count, 3).setBackground(QtGui.QColor(color[0], color[1], color[2]))
+        self.item(self.count, 3).setForeground(QtGui.QColor(color[0], color[1], color[2]))
 
     def add_list_elements(self):
         print("Events: ")
@@ -83,7 +89,7 @@ class EventsTable(QtWidgets.QTableWidget):
             if 'summary' in e and 'dateTime' in e['start']:
                 summary = e['summary']
                 color = self.color_reference[0]
-
+                color_name = self.color_names[0]
                 start_time = e['start']['dateTime']
                 start_time = datetime.datetime.strptime(start_time[:-6], "%Y-%m-%dT%H:%M:%S")
                 end_time = e['end']['dateTime']
@@ -91,18 +97,19 @@ class EventsTable(QtWidgets.QTableWidget):
                 duration = end_time - start_time
                 if 'colorId' in e:
                     color = self.color_reference[int(e['colorId'])]
+                    color_name = self.color_names[int(e['colorId'])]
                 if self.color is None:
                     if self.search_entry is None or self.similar(summary.lower()):
                         self.add_row(summary, str(duration.seconds),
-                                     str(start_time.hour) + ":" + str(start_time.minute) + ":" + str(start_time.second),
-                                     color)
+                                     str(start_time.hour) + ":" + str(start_time.minute),
+                                     color, color_name)
                         self.count += 1
                         total_duration += int(duration.seconds)
                 elif 'colorId' in e and int(e['colorId']) == self.color:
                     if self.search_entry is None or self.similar(summary.lower()):
                         self.add_row(summary, str(duration.seconds),
-                                     str(start_time.hour) + ":" + str(start_time.minute) + ":" + str(start_time.second),
-                                     color)
+                                     str(start_time.hour) + ":" + str(start_time.minute),
+                                     color, color_name)
                         self.count += 1
                         total_duration += int(duration.seconds)
                 if self.max_entries and self.count >= self.max_entries:

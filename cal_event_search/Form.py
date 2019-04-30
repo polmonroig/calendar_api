@@ -279,14 +279,5 @@ class Ui_Form(object):
         self.label_8.setText(_translate("Form", "Duration"))
         self.label_9.setText(_translate("Form", "0"))
 
-from events_table import EventsTable
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())
+from cal_event_search.events_table import EventsTable
 
