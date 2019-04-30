@@ -29,6 +29,9 @@ class Ui_Form(object):
         self.tableWidget.setMaximumSize(QtCore.QSize(800, 16777215))
         self.tableWidget.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.tableWidget.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.tableWidget.setAutoScroll(False)
+        self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.tableWidget.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(4)
         self.tableWidget.setRowCount(0)
@@ -280,4 +283,6 @@ class Ui_Form(object):
         self.label_9.setText(_translate("Form", "0"))
 
 from cal_event_search.events_table import EventsTable
+
+
 

@@ -20,13 +20,13 @@ class EventsTable(QtWidgets.QTableWidget):
         self.search_entry = None
         self.count = 0
         self.color_reference = [(125, 125, 125), (116, 134, 197), (10, 176, 124),
-                                (148, 40, 165), (0, 162, 220), (248, 190, 64),
-                                (248, 73, 43), (236, 121, 126), (97, 97, 97),
+                                (148, 40, 165), (236, 121, 126), (248, 190, 64),
+                                (248, 73, 43), (0, 162, 220), (97, 97, 97),
                                 (51, 86, 185), (4, 130, 79), (221, 7, 27)]
 
         self.color_names = ["unknown", "lavander", "esmerald green",
-                            "intense purple", "Turqouise", "egg yellow",
-                            "mandarin orange", "pink", "graphite",
+                            "intense purple", "Pink", "egg yellow",
+                            "mandarin orange", "Turqouise", "graphite",
                             "blueberry blue", "moss green", "tomato"]
 
     def set_max_entries(self, entries):
@@ -36,7 +36,8 @@ class EventsTable(QtWidgets.QTableWidget):
             self.max_entries = None
 
     def empty_list(self):
-        self.setRowCount(0)
+        for i in range(self.count):
+            self.removeRow(i)
         self.count = 0
 
     def set_search_entry(self, s):
