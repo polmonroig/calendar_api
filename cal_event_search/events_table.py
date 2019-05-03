@@ -128,11 +128,9 @@ class EventsTable(QtWidgets.QTableWidget):
         self.item(self.count, 3).setForeground(QtGui.QColor(color[0], color[1], color[2]))
 
     def add_list_elements(self):
-        print("Events: ")
         elements = get_list(self.service, self.start_time,
                             self.end_time)
         self.empty_list()
-        print(len(elements))
         total_duration = 0
         # initialize 12 zeros : unknown + n_colors
         colors = np.zeros(12)

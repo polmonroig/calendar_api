@@ -1,7 +1,6 @@
 from PyQt5 import QtChart, QtGui, QtCore
 
 
-
 class ChartView(QtChart.QChartView):
 
     def __init__(self, parent):
@@ -31,5 +30,6 @@ class ChartView(QtChart.QChartView):
         axis = QtChart.QValueAxis()
         axis.setRange(0, max(arr))
         chart.addAxis(axis, QtCore.Qt.AlignLeft)
+
         series.attachAxis(axis)
         self.setChart(chart)
