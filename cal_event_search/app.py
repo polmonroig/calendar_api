@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtGui, QtCore, QtWidgets
+from PyQt5 import QtWidgets
 from cal_event_search.Form import Ui_Form
 
 
@@ -20,4 +20,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-

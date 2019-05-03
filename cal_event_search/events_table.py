@@ -5,9 +5,9 @@ import numpy as np
 
 
 class EventsTable(QtWidgets.QTableWidget):
-
     send_entries = QtCore.pyqtSignal(int)
     send_duration = QtCore.pyqtSignal(str)
+    send_colors = QtCore.pyqtSignal(object)
     SIMILAR_RANGE = 3
 
     def __init__(self, parent=None):
@@ -90,6 +90,8 @@ class EventsTable(QtWidgets.QTableWidget):
         self.empty_list()
         print(len(elements))
         total_duration = 0
+        # initialize 12 zeros : unknown + n_colors
+        colors = np.zeros(12)
         for e in elements:
             if 'summary' in e and 'dateTime' in e['start']:
                 summary = e['summary']
@@ -101,18 +103,22 @@ class EventsTable(QtWidgets.QTableWidget):
                 end_time = datetime.datetime.strptime(end_time[:-6], "%Y-%m-%dT%H:%M:%S")
                 duration = end_time - start_time
                 if 'colorId' in e:
-                    color = self.color_reference[int(e['colorId'])]
-                    color_name = self.color_names[int(e['colorId'])]
+                    color_number = int(e['colorId'])
+                    color = self.color_reference[color_number]
+                    color_name = self.color_names[color_number]
+                    colors[color_number] += duration.seconds / 3600
+                else:
+                    colors[0] += duration.seconds / 3600
                 if self.color is None:
                     if self.search_entry is None or self.similar(summary.lower()):
-                        self.add_row(summary, str(duration.seconds),
+                        self.add_row(summary, str(duration.seconds / 3600),
                                      str(start_time.hour) + ":" + str(start_time.minute),
                                      color, color_name)
                         self.count += 1
                         total_duration += int(duration.seconds)
                 elif 'colorId' in e and int(e['colorId']) == self.color:
                     if self.search_entry is None or self.similar(summary.lower()):
-                        self.add_row(summary, str(duration.seconds),
+                        self.add_row(summary, str(duration.seconds / 3600),
                                      str(start_time.hour) + ":" + str(start_time.minute),
                                      color, color_name)
                         self.count += 1
@@ -122,7 +128,8 @@ class EventsTable(QtWidgets.QTableWidget):
 
         # emit signals
         self.send_entries.emit(self.count)
-        self.send_duration.emit(str(total_duration) + " seconds")
+        self.send_colors.emit(colors)
+        self.send_duration.emit(str(total_duration / 3600) + " hours")
         self.setSortingEnabled(True)
 
     def save_data(self):

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1290</width>
-    <height>515</height>
+    <width>1790</width>
+    <height>526</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -118,6 +118,35 @@
         </layout>
        </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="ChartView" name="chart">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>500</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>500</width>
+         <height>500</height>
+        </size>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer name="horizontalSpacer_4">
@@ -642,6 +671,7 @@
    <slots>
     <signal>send_entries(int)</signal>
     <signal>send_duration(QString)</signal>
+    <signal>send_colors()</signal>
     <slot>connect_api()</slot>
     <slot>add_list_elements()</slot>
     <slot>set_search_entry(QString)</slot>
@@ -656,6 +686,14 @@
     <slot>empty_table()</slot>
    </slots>
   </customwidget>
+  <customwidget>
+   <class>ChartView</class>
+   <extends>QGraphicsView</extends>
+   <header>chart_view</header>
+   <slots>
+    <slot>display_color_data()</slot>
+   </slots>
+  </customwidget>
  </customwidgets>
  <resources/>
  <connections>
@@ -666,8 +704,8 @@
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>154</x>
-     <y>505</y>
+     <x>146</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
      <x>116</x>
@@ -682,8 +720,8 @@
    <slot>connect_api()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>213</x>
-     <y>505</y>
+     <x>146</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
      <x>266</x>
@@ -698,8 +736,8 @@
    <slot>add_list_elements()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>414</x>
-     <y>505</y>
+     <x>348</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
      <x>418</x>
@@ -714,8 +752,8 @@
    <slot>save_data()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>615</x>
-     <y>505</y>
+     <x>548</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
      <x>688</x>
@@ -730,8 +768,8 @@
    <slot>set_search_entry(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1275</x>
-     <y>99</y>
+     <x>1775</x>
+     <y>104</y>
     </hint>
     <hint type="destinationlabel">
      <x>713</x>
@@ -746,8 +784,8 @@
    <slot>filter_color(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1275</x>
-     <y>147</y>
+     <x>1775</x>
+     <y>152</y>
     </hint>
     <hint type="destinationlabel">
      <x>791</x>
@@ -762,8 +800,8 @@
    <slot>set_max_entries(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1275</x>
-     <y>195</y>
+     <x>1775</x>
+     <y>200</y>
     </hint>
     <hint type="destinationlabel">
      <x>795</x>
@@ -778,8 +816,8 @@
    <slot>set_start_time(QDateTime)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1069</x>
-     <y>282</y>
+     <x>1775</x>
+     <y>306</y>
     </hint>
     <hint type="destinationlabel">
      <x>752</x>
@@ -794,8 +832,8 @@
    <slot>set_end_time(QDateTime)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1275</x>
-     <y>354</y>
+     <x>1775</x>
+     <y>359</y>
     </hint>
     <hint type="destinationlabel">
      <x>774</x>
@@ -814,8 +852,8 @@
      <y>364</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1275</x>
-     <y>402</y>
+     <x>1775</x>
+     <y>407</y>
     </hint>
    </hints>
   </connection>
@@ -830,8 +868,8 @@
      <y>412</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1275</x>
-     <y>450</y>
+     <x>1775</x>
+     <y>455</y>
     </hint>
    </hints>
   </connection>
@@ -842,12 +880,12 @@
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1197</x>
-     <y>232</y>
+     <x>1775</x>
+     <y>248</y>
     </hint>
     <hint type="destinationlabel">
-     <x>936</x>
-     <y>271</y>
+     <x>1781</x>
+     <y>312</y>
     </hint>
    </hints>
   </connection>
@@ -858,12 +896,12 @@
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1192</x>
-     <y>243</y>
+     <x>1775</x>
+     <y>248</y>
     </hint>
     <hint type="destinationlabel">
-     <x>973</x>
-     <y>317</y>
+     <x>1781</x>
+     <y>365</y>
     </hint>
    </hints>
   </connection>
@@ -874,8 +912,8 @@
    <slot>set_last_week()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>927</x>
-     <y>240</y>
+     <x>1483</x>
+     <y>253</y>
     </hint>
     <hint type="destinationlabel">
      <x>746</x>
@@ -890,8 +928,8 @@
    <slot>set_last_month()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1012</x>
-     <y>237</y>
+     <x>1581</x>
+     <y>253</y>
     </hint>
     <hint type="destinationlabel">
      <x>765</x>
@@ -906,8 +944,8 @@
    <slot>set_last_year()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1106</x>
-     <y>236</y>
+     <x>1675</x>
+     <y>253</y>
     </hint>
     <hint type="destinationlabel">
      <x>774</x>
@@ -922,12 +960,28 @@
    <slot>empty_table()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>769</x>
-     <y>490</y>
+     <x>749</x>
+     <y>516</y>
     </hint>
     <hint type="destinationlabel">
      <x>605</x>
      <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget</sender>
+   <signal>send_colors()</signal>
+   <receiver>chart</receiver>
+   <slot>display_color_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>788</x>
+     <y>64</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>900</x>
+     <y>68</y>
     </hint>
    </hints>
   </connection>
