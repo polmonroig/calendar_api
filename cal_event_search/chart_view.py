@@ -1,6 +1,7 @@
 from PyQt5 import QtChart, QtGui, QtCore
 
 
+
 class ChartView(QtChart.QChartView):
 
     def __init__(self, parent):

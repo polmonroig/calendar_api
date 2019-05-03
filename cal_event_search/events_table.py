@@ -4,6 +4,50 @@ import datetime
 import numpy as np
 
 
+def seconds_to_string(seconds):
+    days = str(int(seconds / 86400))
+    hours = str(int((seconds % 86400) / 3600))
+    minutes = str(int((seconds % 3600) / 60))
+    return days + " days " + hours + " hours " + minutes + " minutes"
+
+
+class DateItem(QtWidgets.QTableWidgetItem):
+    def __init__(self, hours, minutes):
+        self.hours = str(hours)
+        self.minutes = str(minutes)
+        if hours < 10:
+            self.hours = "0" + self.hours
+        if minutes < 10:
+            self.minutes = "0" + self.minutes
+        super(DateItem, self).__init__(self.hours + ":" + self.minutes)
+
+    def __lt__(self, other):
+        if isinstance(other, DateItem):
+            if self.hours != other.hours:
+                return self.hours < other.hours
+            else:
+                return self.minutes < other.minutes
+        else:
+            return QtWidgets.QTableWidgetItem.__lt__(self, other)
+
+
+class DurationItem(QtWidgets.QTableWidgetItem):
+    def __init__(self, value):
+        self.hours = int(value / 3600)
+        self.minutes = int((value % 3600) / 60)
+        display_value = str(self.hours) + " hours " + str(self.minutes) + " minutes"
+        super(DurationItem, self).__init__(display_value)
+
+    def __lt__(self, other):
+        if isinstance(other, DurationItem):
+            if self.hours != other.hours:
+                return self.hours < other.hours
+            else:
+                return self.minutes < other.minutes
+        else:
+            return QtWidgets.QTableWidgetItem.__lt__(self, other)
+
+
 class EventsTable(QtWidgets.QTableWidget):
     send_entries = QtCore.pyqtSignal(int)
     send_duration = QtCore.pyqtSignal(str)
@@ -77,8 +121,8 @@ class EventsTable(QtWidgets.QTableWidget):
     def add_row(self, summary, duration, start_date, color, color_name):
         self.insertRow(self.count)
         self.setItem(self.count, 0, QtWidgets.QTableWidgetItem(summary))
-        self.setItem(self.count, 1, QtWidgets.QTableWidgetItem(duration))
-        self.setItem(self.count, 2, QtWidgets.QTableWidgetItem(start_date))
+        self.setItem(self.count, 1, DurationItem(duration))
+        self.setItem(self.count, 2, DateItem(start_date.hour, start_date.minute))
         self.setItem(self.count, 3, QtWidgets.QTableWidgetItem(color_name))
         self.item(self.count, 3).setBackground(QtGui.QColor(color[0], color[1], color[2]))
         self.item(self.count, 3).setForeground(QtGui.QColor(color[0], color[1], color[2]))
@@ -111,15 +155,13 @@ class EventsTable(QtWidgets.QTableWidget):
                     colors[0] += duration.seconds / 3600
                 if self.color is None:
                     if self.search_entry is None or self.similar(summary.lower()):
-                        self.add_row(summary, str(duration.seconds / 3600),
-                                     str(start_time.hour) + ":" + str(start_time.minute),
+                        self.add_row(summary, duration.seconds, start_time,
                                      color, color_name)
                         self.count += 1
                         total_duration += int(duration.seconds)
                 elif 'colorId' in e and int(e['colorId']) == self.color:
                     if self.search_entry is None or self.similar(summary.lower()):
-                        self.add_row(summary, str(duration.seconds / 3600),
-                                     str(start_time.hour) + ":" + str(start_time.minute),
+                        self.add_row(summary, duration.seconds, start_time,
                                      color, color_name)
                         self.count += 1
                         total_duration += int(duration.seconds)
@@ -129,7 +171,7 @@ class EventsTable(QtWidgets.QTableWidget):
         # emit signals
         self.send_entries.emit(self.count)
         self.send_colors.emit(colors)
-        self.send_duration.emit(str(total_duration / 3600) + " hours")
+        self.send_duration.emit(seconds_to_string(total_duration))
         self.setSortingEnabled(True)
 
     def save_data(self):
