@@ -15,6 +15,7 @@ Note: after installing you will need a Google API credentials,
     python >= 3.7
     qt>=5.9.7
     qtpy>=1.5.2
+    pyqtchartZ>=5.12
     google-api-python-client>=1.7.8
     google-auth>=1.6.3
     google-auth-httplib2>=0.0.3
